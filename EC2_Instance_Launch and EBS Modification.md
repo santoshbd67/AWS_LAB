@@ -56,3 +56,45 @@
 
 #### AWS will now resize the volume, but you need to update the OS to use the additional space.
 
+## Step 4: Extend the File System on EC2 (Linux Instance)
+#### After increasing the volume, you must extend the file system on your EC2 instance.
+
+#### 4.1 Connect to Your EC2 Instance via SSH
+#### Open a terminal and run:
+```
+ssh -i your-key.pem ec2-user@your-instance-ip
+```
+#### (Replace your-key.pem with your private key file and your-instance-ip with the public IP of your EC2 instance.)
+#### 4.2 Check the Current Disk Size
+Run the following command to check the available disk space:
+```
+lsblk
+```
+#### It will show something like:
+```
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0  30G  0 disk
+└─xvda1 202:1    0  8G   0 part /
+Here, xvda is the full 30 GiB disk, but the partition xvda1 is still 8 GiB.
+```
+
+#### 4.3 Extend the Partition (If Needed)
+#### If your partition does not automatically expand:
+```
+sudo growpart /dev/xvda 1
+```
+#### 4.4 Resize the File System
+#### For ext4 file system (Amazon Linux 2, Ubuntu):
+```
+sudo resize2fs /dev/xvda1
+```
+#### For XFS file system (Amazon Linux 2, RHEL):
+```
+sudo xfs_growfs /
+```
+#### 4.5 Verify the Changes
+#### Run the command again:
+```
+df -h
+```
+#### You should see the updated file system reflecting the new size.
