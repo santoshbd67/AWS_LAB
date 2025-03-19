@@ -26,7 +26,7 @@ A Load Balancer is a networking service that distributes incoming traffic across
 #### Select HTTP or HTTPS.
 #### Set Port (e.g., 80 for HTTP or 443 for HTTPS).
 #### VPC Selection:
-####Choose the VPC where your EC2 instances are running.
+#### Choose the VPC where your EC2 instances are running.
 #### Health Checks:
 #### Protocol: HTTP
 #### Path: / (or /health if your app has a health check endpoint).
