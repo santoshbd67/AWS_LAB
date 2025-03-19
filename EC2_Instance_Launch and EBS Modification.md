@@ -43,3 +43,16 @@
 <img width="950" alt="volume" src="https://github.com/user-attachments/assets/98e884bf-0891-4d9b-b9b9-e72c39802dc1" />
 
 
+## Step 3: Modify the EBS Volume Size
+#### In the EBS Volumes section, select the attached volume.
+#### Click Actions → Modify Volume.
+<img width="949" alt="modify" src="https://github.com/user-attachments/assets/c30edad9-e91c-4cb3-a591-7b714fe2a5c0" />
+
+#### In the Modify Volume dialog box:
+#### Increase the Size (GiB) (e.g., from 8 GiB to 30 GiB).
+#### Keep the Volume Type unchanged (unless necessary).
+#### Click Modify and confirm.
+<img width="938" alt="changed" src="https://github.com/user-attachments/assets/066ec4a5-6aea-4832-895e-9b587be2fab2" />
+
+#### AWS will now resize the volume, but you need to update the OS to use the additional space.
+
