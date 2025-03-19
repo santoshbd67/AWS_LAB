@@ -1,11 +1,11 @@
-## Step 1: Launch an EC2 Instance
-#### 1.1 Log in to AWS Console
+##  Launch an EC2 Instance
+#### Log in to AWS Console
 ##### Open AWS Console and log in.
 ##### Search for EC2 in the top search bar and select EC2 Dashboard.
 
 <img width="787" alt="ec2 search" src="https://github.com/user-attachments/assets/6bef0794-6a6d-498c-a6df-730c28de6519" />
 
-#### 1.2 Create a New EC2 Instance
+####  Create a New EC2 Instance
 ##### Click Launch instance.
 <img width="943" alt="launch" src="https://github.com/user-attachments/assets/5bb0f8f0-9d6b-4030-8fea-e0a992c16f80" />
 
@@ -37,11 +37,11 @@
 
 
 
-## Step 5: Change the EC2 Instance Type Using AWS Management Console (UI)
+## Change the EC2 Instance Type Using AWS Management Console (UI)
 #### After modifying the EBS volume size and extending the file system, you may need to upgrade or downgrade the EC2 instance type based on performance needs. Follow these steps
 
-## Step 5: Change the EC2 Instance Type
-#### 5.1 Stop the EC2 Instance
+##  Change the EC2 Instance Type
+####  Stop the EC2 Instance
 #### Log in to AWS Console and go to EC2 Dashboard.
 #### Click Instances in the left panel.
 #### Select the instance whose type you want to change.
@@ -50,13 +50,13 @@
 
 #### ⚠️ Stopping the instance is required before changing the instance type.
 
-#### 5.2 Modify the Instance Type
+####  Modify the Instance Type
 #### Select the stopped instance.
 #### Click Actions → Instance Settings → Change Instance Type.
 <img width="941" alt="instancetyoe" src="https://github.com/user-attachments/assets/347f0a37-a48d-436a-97c6-9d9a16d4c7b5" />
 
 #### Choose the new Instance Type (e.g., change from t2.micro to t2.medium).
 #### Click Apply to save changes.
-#### 5.3 Start the EC2 Instance
+#### Start the EC2 Instance
 #### Click Instance State → Start Instance.
 #### Wait for the instance status to change to Running.
