@@ -35,3 +35,11 @@
 ##### Wait for the instance to launch, then navigate to Instances and confirm its status is Running.
 <img width="954" alt="running" src="https://github.com/user-attachments/assets/b8c9cafd-7f67-4a74-ae17-ee265f16029f" />
 
+## Step 2: Locate the EBS Volume
+#### In the EC2 Dashboard, go to the left panel and select Volumes under Elastic Block Store (EBS).
+#### Locate the volume attached to your EC2 instance:
+#### Check the Attachment Information column.
+#### You can also check Instance ID under the EC2 > Instances > Storage tab.
+<img width="950" alt="volume" src="https://github.com/user-attachments/assets/98e884bf-0891-4d9b-b9b9-e72c39802dc1" />
+
+
