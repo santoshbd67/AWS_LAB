@@ -12,6 +12,9 @@
 #### Example: If the instance is in us-east-1a, the EBS must be in us-east-1a.
 #### Encryption: Choose if needed.
 #### Click Create Volume.
+<img width="938" alt="volume1" src="https://github.com/user-attachments/assets/145cd9f8-a21d-47d3-b28d-e40dae81b02f" />
+
+<img width="899" alt="volume2" src="https://github.com/user-attachments/assets/fcc6acf1-747f-440e-b6a4-84a7f2d8abc0" />
 
 ### Step 2: Attach the EBS Volume to the EC2 Instance
 #### In the Volumes section, find your newly created volume.
@@ -20,6 +23,10 @@
 #### Instance: Select your running EC2 instance.
 #### Device Name: Default is /dev/xvdf (for Linux).
 #### Click Attach Volume.
+<img width="929" alt="volumeattach1" src="https://github.com/user-attachments/assets/ec92c8c9-5288-434c-849d-f2de4310116e" />
+
+<img width="932" alt="volumeattach2" src="https://github.com/user-attachments/assets/1c5ff7d4-a3d2-43b9-b353-6ff57bbb7544" />
+
 
 ### Step 3: Connect to Your EC2 Instance
 #### Copy your Public IP from EC2 Dashboard.
