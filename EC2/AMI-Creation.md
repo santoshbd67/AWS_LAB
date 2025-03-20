@@ -24,3 +24,8 @@
   #### Checked: Instance won't reboot (may cause issues).
   #### Unchecked: AWS reboots the instance for a clean image.
   #### Click Create Image.
+  <img width="938" alt="amicreate1" src="https://github.com/user-attachments/assets/e8cc713c-531a-4381-8856-d0c597c45088" />
+
+  <img width="869" alt="amifinal" src="https://github.com/user-attachments/assets/29b5fe4e-936c-4dec-bfdf-c2b2158692f3" />
+
+
