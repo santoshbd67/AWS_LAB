@@ -16,6 +16,7 @@
 #### VPC Name: MyPOC-VPC
 
 <img width="828" alt="vpcname" src="https://github.com/user-attachments/assets/28a740a8-ee9e-4b3c-a68e-998fbacd694e" />
+
 #### CIDR Block: 10.0.0.0/16
 #### Classless Inter-Domain Routing (CIDR) is an IP address allocation method that improves data routing efficiency on the internet
 #### You can use the followinf URL for calculating the CIDR rang
