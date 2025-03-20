@@ -20,7 +20,7 @@
 #### CIDR Block: 10.0.0.0/16
 #### Classless Inter-Domain Routing (CIDR) is an IP address allocation method that improves data routing efficiency on the internet
 #### You can use the followinf URL for calculating the CIDR rang
-https://www.davidc.net/sites/default/subnets/subnets.html
+#### https://www.davidc.net/sites/default/subnets/subnets.html
 <img width="541" alt="cidr" src="https://github.com/user-attachments/assets/f1b10d88-6278-4f64-9e9a-c4289063a4a0" />
 <img width="890" alt="vpccretae" src="https://github.com/user-attachments/assets/ebb16e7c-6597-4286-9585-48965df003ff" />
 
