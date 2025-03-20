@@ -9,8 +9,9 @@
 
   #### * Each user has a username, password, and access keys (for programmatic access).
 #### * Permissions are assigned using IAM Policies.
-Example: A developer with permission to access EC2 but not S3.
-✅ Use Case: Create an IAM user for each employee instead of using the root user.
+#### * Example: A developer with permission to access EC2 but not S3.
+
+#### ✅ Use Case: Create an IAM user for each employee instead of using the root user.
 
 2. IAM Groups 📂
 An IAM Group is a collection of users with similar permissions.
