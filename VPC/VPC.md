@@ -74,13 +74,23 @@
 #### Name: Public-RT
 #### VPC: Select MyPOC-VPC.
 #### Click Create.
+  <img width="940" alt="rt1" src="https://github.com/user-attachments/assets/5c1aa9ea-6381-4854-b731-c4dd058eb868" />
+
 #### Select Public-RT, go to Routes, and click Edit Routes.
 #### Destination: 0.0.0.0/0 (All internet traffic)
 #### Target: Select MyIGW
 #### Click Save.
+<img width="933" alt="edit rt" src="https://github.com/user-attachments/assets/88e67f1d-f312-46c1-a84b-8ad451276ccd" />
+
+<img width="949" alt="editrt1" src="https://github.com/user-attachments/assets/41d42b4d-9ff1-4061-b6f9-7d8866e3256d" />
+
 ### Associate it with Public-Subnet:
   #### Click Subnet Associations → Edit Subnet Associations.
   #### Select Public-Subnet → Click Save Associations.
+  <img width="938" alt="rt3" src="https://github.com/user-attachments/assets/3a6862a6-c15a-42d1-898d-a56f2a8d3953" />
+
+<img width="944" alt="rt4" src="https://github.com/user-attachments/assets/8dd2924f-a581-44d5-84f9-4cd269f96608" />
+
   
 ## Step 5: Create a NAT Gateway (For Private Subnet Internet Access)
 ### 💡 NAT Gateway allows private subnet instances to access the internet (for software updates, API calls, etc.) without being exposed.
