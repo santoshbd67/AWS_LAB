@@ -2,6 +2,7 @@
 #### A VPC (Virtual Private Cloud) is an isolated network in AWS where you can launch your resources securely. It provides full control over IP addressing, routing, and security.
 
 ### Key Components & Their Purpose
+
   #### VPC: The main network (e.g., 10.0.0.0/16).
   #### Subnets: Smaller networks inside the VPC.
   #### Public Subnet: Direct internet access via Internet Gateway (IGW).
