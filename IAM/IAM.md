@@ -7,7 +7,7 @@
   #### 1. IAM Users 👤
   #### An IAM User represents an individual who needs access to AWS resources.
 
-Each user has a username, password, and access keys (for programmatic access).
+  #### * Each user has a username, password, and access keys (for programmatic access).
 Permissions are assigned using IAM Policies.
 Example: A developer with permission to access EC2 but not S3.
 ✅ Use Case: Create an IAM user for each employee instead of using the root user.
