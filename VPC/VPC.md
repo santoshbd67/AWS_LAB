@@ -91,7 +91,22 @@
 
 <img width="944" alt="rt4" src="https://github.com/user-attachments/assets/8dd2924f-a581-44d5-84f9-4cd269f96608" />
 
-  
+
+### Private Route Table (for Private Subnet)
+#### Go to Route Tables → Click Create Route Table.
+#### Name: Public-RT
+#### VPC: Select MyPOC-VPC.
+#### Click Create.
+
+#### Select Public-RT, go to Routes, and click Edit Routes.
+#### Destination: 0.0.0.0/0 (All internet traffic)
+#### Target: Select MyIGW
+#### Click Save.
+
+### Associate it with Public-Subnet:
+  #### Click Subnet Associations → Edit Subnet Associations.
+  #### Select Public-Subnet → Click Save Associations.
+
 ## Step 5: Create a NAT Gateway (For Private Subnet Internet Access)
 ### 💡 NAT Gateway allows private subnet instances to access the internet (for software updates, API calls, etc.) without being exposed.
 
@@ -99,6 +114,11 @@
   #### Subnet: Choose Public-Subnet.
   #### Elastic IP: Click Allocate New Elastic IP → Click Allocate → Select it.
   #### Click Create NAT Gateway.
+  <img width="939" alt="nat1" src="https://github.com/user-attachments/assets/a0743724-6691-4b39-b3a1-1e0a38e9486b" />
+
+  <img width="833" alt="nat2" src="https://github.com/user-attachments/assets/b0485dd6-c079-48fd-b01e-decfcafcb7be" />
+
+
   #### Update Private Route Table:
   #### Go to Route Tables → Click Create Route Table.
   #### Name: Private-RT.
