@@ -55,8 +55,17 @@
 
 ### Go to Internet Gateways → Click Create Internet Gateway.
   #### Name: MyIGW → Click Create.
+  <img width="953" alt="igw1" src="https://github.com/user-attachments/assets/1c2f911c-2bc4-4ab0-bc31-951b659eb278" />
+
+  <img width="949" alt="igw2" src="https://github.com/user-attachments/assets/9824adae-2f86-4e2d-be60-cada920ff2ad" />
+
 #### Select MyIGW → Click Actions → Attach to VPC.
   #### Select MyPOC-VPC → Click Attach.
+<img width="944" alt="igw3" src="https://github.com/user-attachments/assets/81f0716a-fbff-43a5-a996-e5cb98f2f49a" />
+
+<img width="944" alt="igw4" src="https://github.com/user-attachments/assets/3d4986f8-10a1-465e-b5c1-07fb96812ca6" />
+
+
 ## Step 4: Configure Route Tables (RTs)
 ### 💡 Route Tables define how traffic flows inside the VPC.
 
