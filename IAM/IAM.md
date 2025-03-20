@@ -55,9 +55,4 @@
 #### ✅ Use Case: Secure service-to-service communication without exposing credentials.
 
 
-IAM Security Best Practices
-✔ Use IAM Roles for AWS Services (instead of storing credentials).
-✔ Enable Multi-Factor Authentication (MFA) for users.
-✔ Follow the Principle of Least Privilege (grant only necessary permissions).
-✔ Rotate Access Keys Regularly if users need programmatic access.
-✔ Monitor IAM Activity using AWS CloudTrail.
+
