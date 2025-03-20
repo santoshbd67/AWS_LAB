@@ -13,23 +13,23 @@
 
 #### ✅ Use Case: Create an IAM user for each employee instead of using the root user.
 
-2. IAM Groups 📂
-An IAM Group is a collection of users with similar permissions.
+### 2. IAM Groups 📂
+#### An IAM Group is a collection of users with similar permissions.
 
-Instead of assigning permissions to users individually, you assign them to a group.
-Example:
-Admin Group → Full access to AWS.
-Developers Group → Access to EC2 & S3 but not IAM.
-✅ Use Case: Easily manage permissions for multiple users at once.
+#### *Instead of assigning permissions to users individually, you assign them to a group.
+#### * Example:
+  #### 1 Admin Group → Full access to AWS.
+  #### 2 Developers Group → Access to EC2 & S3 but not IAM.
+  
+#### ✅ Use Case: Easily manage permissions for multiple users at once.
 
-3. IAM Policies 📜
-IAM Policies are JSON documents that define permissions.
 
-They are attached to users, groups, or roles to grant or deny access.
-Example of a policy that allows read-only access to S3:
-json
-Copy
-Edit
+### 3. IAM Policies 📜
+#### IAM Policies are JSON documents that define permissions.
+
+#### * They are attached to users, groups, or roles to grant or deny access.
+#### * Example of a policy that allows read-only access to S3:
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -40,16 +40,19 @@ Edit
     }
   ]
 }
-✅ Use Case: Restrict access to only required AWS services.
+```
 
-4. IAM Roles 🎭
-IAM Roles allow AWS services or users to assume temporary permissions.
+#### ✅ Use Case: Restrict access to only required AWS services.
 
-Unlike IAM Users, roles do not require passwords or access keys.
-AWS services (like EC2, Lambda, or S3) assume IAM roles to perform actions.
-Example:
-EC2 Role with S3 access → Lets an EC2 instance upload files to S3 without hardcoded credentials.
-✅ Use Case: Secure service-to-service communication without exposing credentials.
+### 4. IAM Roles 🎭
+#### IAM Roles allow AWS services or users to assume temporary permissions.
+
+#### * Unlike IAM Users, roles do not require passwords or access keys.
+#### * AWS services (like EC2, Lambda, or S3) assume IAM roles to perform actions.
+#### * Example:
+#### 1 EC2 Role with S3 access → Lets an EC2 instance upload files to S3 without hardcoded credentials.
+
+#### ✅ Use Case: Secure service-to-service communication without exposing credentials.
 
 5. IAM Permission Boundaries & Policies 🔒
 IAM supports different types of policies:
