@@ -41,3 +41,7 @@ echo "<h1>Welcome to the Devops Lab!</h1>" > /var/www/html/index.html
 ```
 
 
+##### Click Launch instance.
+<img width="932" alt="image" src="https://github.com/user-attachments/assets/5dd4185e-ceff-4aec-96f8-9026bd25ba56" />
+
+
