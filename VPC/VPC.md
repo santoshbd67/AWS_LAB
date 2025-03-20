@@ -31,16 +31,25 @@
   #### Select VPC: MyPOC-VPC.
   #### Create Public Subnet
   #### Name: Public-Subnet
-  #### CIDR: 10.0.1.0/24 (256 IPs)
-  #### Availability Zone: Choose any
+  #### CIDR: 10.0.0.0/19 (256 IPs)
+  #### Availability Zone: Choose of your choice
   #### Auto-assign public IPv4: Enable
   #### Click Create Subnet.
+
+<img width="715" alt="subnet1" src="https://github.com/user-attachments/assets/3d45141f-97a1-457a-87a4-222d630063a3" />
+
+<img width="760" alt="subnet2" src="https://github.com/user-attachments/assets/4ab34248-9fc2-475f-b2fc-33fa602a3089" />
+
+<img width="943" alt="subnet3" src="https://github.com/user-attachments/assets/00310a59-f5be-4263-a5f5-a071bde4f086" />
+
+ ### Same way create private subnet
   #### Create Private Subnet
   #### Name: Private-Subnet
-  #### CIDR: 10.0.2.0/24
+  #### CIDR: 10.0.32.0/19
   ####  Availability Zone: Same or different from the public subnet
-  ####Auto-assign public IPv4: Disable
+  #### Auto-assign public IPv4: Disable
   #### Click Create Subnet.
+  
 Step 3: Create and Attach an Internet Gateway (IGW)
 💡 IGW allows public subnets to connect to the internet.
 
