@@ -36,6 +36,7 @@
   #### Log in to AWS Console → Navigate to EC2 Dashboard.
   #### In the left panel, click on AMIs (under "Images").
   #### Find and select your AMI (e.g., MyCustomAMI).
+
 ### Step 2: Launch an Instance from the AMI
   #### Select MyCustomAMI.
   #### Click Launch Instance from Image.
@@ -44,15 +45,25 @@
   #### Network (VPC): Select your existing VPC.
   #### Subnet: Choose a public or private subnet.
   #### Auto-assign Public IP: Enable for internet access.
+  
 ### Step 3: Configure Storage
   #### Keep the default volume size or modify it as needed.
   #### Click Next to add optional tags (e.g., Key: Name, Value: MyAMIInstance).
+  
 ### Step 4: Configure Security Group
   #### Select an existing Security Group or create a new one.
   #### Ensure necessary rules are added (e.g., allow SSH, HTTP, HTTPS).
+  
 ### Step 5: Select Key Pair & Launch the Instance
   #### Choose an existing key pair or create a new one.
   #### Check the box I acknowledge... if creating a new key.
 #### Click Launch Instance.
+
+  <img width="925" alt="launchami1" src="https://github.com/user-attachments/assets/77ca9fe6-6ddd-4fb3-8b10-662bf109242a" />
+
+<img width="939" alt="launchami2" src="https://github.com/user-attachments/assets/19f68412-04e1-4bb3-98ea-979bb0a45edf" />
+
+<img width="906" alt="launchami3" src="https://github.com/user-attachments/assets/1c3856df-a492-4f90-8cf7-8795bb47dcc6" />
+
 
 
