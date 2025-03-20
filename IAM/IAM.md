@@ -54,14 +54,6 @@
 
 #### ✅ Use Case: Secure service-to-service communication without exposing credentials.
 
-5. IAM Permission Boundaries & Policies 🔒
-IAM supports different types of policies:
-
-Managed Policies → AWS-defined permissions (e.g., AdministratorAccess).
-Customer Managed Policies → Custom permissions tailored to your needs.
-Inline Policies → Directly attached to a single user, role, or group.
-Permission Boundaries → Limit the maximum permissions a user or role can have.
-✅ Use Case: Set restrictions on users even if they belong to an admin group.
 
 IAM Security Best Practices
 ✔ Use IAM Roles for AWS Services (instead of storing credentials).
