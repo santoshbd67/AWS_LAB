@@ -19,46 +19,39 @@
 #### Support for multiple data sources (Prometheus, MySQL, AWS CloudWatch, etc.).
 #### User-friendly interface for monitoring and analytics.
 
-🔹 Step 1: Install Docker & Docker Compose
-Update system and install Docker:
-
-bash
-Copy
-Edit
+## 🔹 Step 1: Install Docker & Docker Compose
+#### Update system and install Docker:
+```
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y docker.io docker-compose
-Start and enable Docker:
+```
 
-bash
-Copy
-Edit
+#### Start and enable Docker:
+```
 sudo systemctl enable docker
 sudo systemctl start docker
-Verify installation:
+````
 
-bash
-Copy
-Edit
+Verify installation:
+```
 docker --version
 docker-compose --version
-🔹 Step 2: Deploy Prometheus & Grafana using Docker
-Create a monitoring directory:
+```
 
-bash
-Copy
-Edit
+## 🔹 Step 2: Deploy Prometheus & Grafana using Docker
+
+#### Create a monitoring directory:
+```
 mkdir ~/monitoring && cd ~/monitoring
-Create docker-compose.yml:
+```
 
-bash
-Copy
-Edit
+#### Create docker-compose.yml:
+```
 nano docker-compose.yml
-Paste the following configuration:
+```
 
-yaml
-Copy
-Edit
+Paste the following configuration:
+```
 version: '3.8'
 
 services:
@@ -85,17 +78,15 @@ services:
 
 volumes:
   grafana-storage:
-Create Prometheus config file:
+```
 
-bash
-Copy
-Edit
+#### Create Prometheus config file:
+```
 nano prometheus.yml
-Paste the following configuration:
+```
 
-yaml
-Copy
-Edit
+#### Paste the following configuration:
+```
 global:
   scrape_interval: 10s
 
@@ -107,18 +98,15 @@ scrape_configs:
   - job_name: 'node_exporter'
     static_configs:
       - targets: ['<instance-1-ip>:9100', '<instance-2-ip>:9100']
-Replace <instance-1-ip> and <instance-2-ip> with actual AWS instance IPs.
+```
+#### Replace <instance-1-ip> and <instance-2-ip> with actual AWS instance IPs.
 
-Start Prometheus & Grafana:
-
-bash
-Copy
-Edit
+#### Start Prometheus & Grafana:
+```
 docker-compose up -d
+```
+
 Verify running containers:
-
-bash
-Copy
-Edit
+```
 docker ps
-
+```
