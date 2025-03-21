@@ -110,3 +110,51 @@ Verify running containers:
 ```
 docker ps
 ```
+
+## 🔹 Step 3: Install Node Exporter on Instance
+
+#### Create a Node Exporter Directory
+```
+mkdir -p ~/node-exporter && cd ~/node-exporter
+```
+
+#### Create docker-compose.yml
+```
+nano docker-compose.yml
+```
+
+#### Paste the following content:
+```
+version: '3.8'
+
+services:
+  node-exporter:
+    image: prom/node-exporter:latest
+    container_name: node-exporter
+    restart: always
+    ports:
+      - "9100:9100"
+    networks:
+      - monitoring
+    command:
+      - "--path.procfs=/host/proc"
+      - "--path.sysfs=/host/sys"
+    volumes:
+      - "/proc:/host/proc:ro"
+      - "/sys:/host/sys:ro"
+
+networks:
+  monitoring:
+    driver: bridge
+```
+
+#### Explanation:
+
+#### Exposes port 9100 (default for Node Exporter).
+#### Mounts system directories to allow metric collection.
+#### Uses bridge network for easier Prometheus integration.
+
+#### Run the container using Docker Compose:
+```
+docker-compose up -d
+```
