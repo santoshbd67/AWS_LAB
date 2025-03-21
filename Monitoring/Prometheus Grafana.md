@@ -158,3 +158,25 @@ networks:
 ```
 docker-compose up -d
 ```
+
+## 🔹 Step 4: Add Prometheus as Data Source in Grafana
+#### Open Grafana at http://<your-instance-ip>:3000.
+#### Login with:
+#### Username: admin
+#### Password: admin
+<img width="925" alt="image" src="https://github.com/user-attachments/assets/b6f6d32f-c9ab-4ed3-a610-1f3a5216f811" />
+
+Go to Settings → Data Sources.
+Click "Add Data Source" → Select Prometheus.
+Set URL as:
+arduino
+Copy
+Edit
+http://prometheus:9090
+Click "Save & Test".
+🔹 Step 5: Import Grafana Dashboard
+Click Dashboards → Import.
+Enter Dashboard ID 1860 (Node Exporter Full Dashboard).
+Click Load → Select Prometheus as data source.
+Click Import.
+Now you should see real-time metrics! 🎯
