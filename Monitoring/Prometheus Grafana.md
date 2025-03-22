@@ -166,17 +166,34 @@ docker-compose up -d
 #### Password: admin
 <img width="925" alt="image" src="https://github.com/user-attachments/assets/b6f6d32f-c9ab-4ed3-a610-1f3a5216f811" />
 
-Go to Settings → Data Sources.
-Click "Add Data Source" → Select Prometheus.
-Set URL as:
-arduino
-Copy
-Edit
+#### Go to Settings → Data Sources.
+##### Click "Add Data Source" → Select Prometheus.
+<img width="921" alt="prometheus1" src="https://github.com/user-attachments/assets/c7f83348-c6e2-40e7-a595-0d86df342879" />
+
+
+#### Set URL as:
+```
 http://prometheus:9090
-Click "Save & Test".
-🔹 Step 5: Import Grafana Dashboard
-Click Dashboards → Import.
-Enter Dashboard ID 1860 (Node Exporter Full Dashboard).
-Click Load → Select Prometheus as data source.
-Click Import.
-Now you should see real-time metrics! 🎯
+```
+#### Click "Save & Test".
+
+<img width="930" alt="prometheus2" src="https://github.com/user-attachments/assets/ef48c3fd-07c0-499b-b56d-3693d9115e0b" />
+
+<img width="863" alt="prometheus3" src="https://github.com/user-attachments/assets/721bbdc8-cc79-436c-9ccb-b3f1f3dbc837" />
+<img width="535" alt="prometheus4" src="https://github.com/user-attachments/assets/2e893f6c-acd3-4642-801d-95c34f2dbbd1" />
+
+
+## 🔹 Step 5: Import Grafana Dashboard
+#### Click Dashboards → Import.
+<img width="931" alt="prometheus5" src="https://github.com/user-attachments/assets/cde272e0-5446-4d1d-991a-a883ae7a062d" />
+
+
+#### Enter Dashboard ID 1860 (Node Exporter Full Dashboard).
+<img width="941" alt="prometheu6" src="https://github.com/user-attachments/assets/cb915873-4282-4645-8202-ec8084995641" />
+
+#### Click Load → Select Prometheus as data source.
+#### Click Import.
+### Now you should see real-time metrics! 🎯
+
+<img width="943" alt="prometheus7" src="https://github.com/user-attachments/assets/f761d8bd-81c8-437b-8c24-96558b6127a3" />
+
