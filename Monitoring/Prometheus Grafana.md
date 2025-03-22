@@ -194,6 +194,5 @@ http://prometheus:9090
 #### Click Load → Select Prometheus as data source.
 #### Click Import.
 ### Now you should see real-time metrics! 🎯
-
 <img width="943" alt="prometheus7" src="https://github.com/user-attachments/assets/f761d8bd-81c8-437b-8c24-96558b6127a3" />
 
