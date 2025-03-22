@@ -22,6 +22,8 @@ A Load Balancer is a networking service that distributes incoming traffic across
 ### 1.2 Configure the Target Group
 #### Choose Target Type:
 #### Select Instances (for EC2-based apps) or IP addresses (for external apps).
+<img width="794" alt="image" src="https://github.com/user-attachments/assets/f5502b5a-ae09-4b76-9c15-2f937cae7442" />
+
 #### Enter a Name:
 #### Example: my-target-group.
 #### Protocol and Port:
@@ -31,27 +33,37 @@ A Load Balancer is a networking service that distributes incoming traffic across
 #### Choose the VPC where your EC2 instances are running.
 #### Health Checks:
 #### Protocol: HTTP
+<img width="944" alt="image" src="https://github.com/user-attachments/assets/52263504-a128-4a92-bab2-fc95c3f4bfb4" />
+
 #### Path: / (or /health if your app has a health check endpoint).
 #### Click Next.
 ### 1.3 Register Targets (EC2 Instances)
 #### Select your running EC2 instances.
 #### Click Include as pending below.
 #### Click Create target group.
+<img width="949" alt="image" src="https://github.com/user-attachments/assets/54bb89bf-7ea0-4959-b035-08e9242f2a67" />
+
 #### ✅ Target Group Created!
 
 ## Step 2: Create an Application Load Balancer (ALB)
+
 ### 2.1 Navigate to Load Balancers
 #### In the EC2 Dashboard, go to Load Balancers (under Load Balancing).
 #### Click Create Load Balancer.
 #### Choose Application Load Balancer (ALB) and click Create.
+<img width="897" alt="image" src="https://github.com/user-attachments/assets/d8d889bf-b133-4cef-8527-561f2a0fb8f7" />
+
 ### 2.2 Configure Load Balancer
 #### Name: Example → my-load-balancer.
 #### Scheme:
 #### Internet-facing (for public access)
 #### Internal (for internal network only)
 #### IP Address Type: IPv4
+<img width="679" alt="image" src="https://github.com/user-attachments/assets/2609dbec-0346-4a28-88a4-8bc1f422c59f" />
+
 #### Listeners:
 #### Add HTTP (port 80) or HTTPS (port 443) (if using SSL).
+
 #### VPC and Availability Zones:
 #### Select your VPC and at least two availability zones.
 ### 2.3 Configure Security Group
@@ -60,10 +72,14 @@ A Load Balancer is a networking service that distributes incoming traffic across
 ### 2.4 Configure Routing
 #### Select the Target Group you created earlier (my-target-group).
 #### Keep the Protocol as HTTP (or HTTPS if SSL is enabled).
+<img width="688" alt="image" src="https://github.com/user-attachments/assets/8c79dbe4-9935-428c-aa7c-c069ea339556" />
+
 #### Click Next: Register Targets.
 ### 2.5 Review and Create
 #### Review all settings.
 #### Click Create Load Balancer.
+<img width="922" alt="image" src="https://github.com/user-attachments/assets/32deac84-23b6-4eb6-95c9-b96cac738d1d" />
+
 #### Wait a few minutes until the status changes to Active.
 #### ✅ Load Balancer Created!
 
