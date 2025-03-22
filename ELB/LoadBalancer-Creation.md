@@ -17,6 +17,8 @@ A Load Balancer is a networking service that distributes incoming traffic across
 #### In the EC2 Dashboard, scroll down to Load Balancing.
 #### Click on Target Groups (left-hand menu).
 #### Click Create Target Group.
+<img width="945" alt="image" src="https://github.com/user-attachments/assets/aaa51e7f-db0c-4089-8917-3c25737ae19d" />
+
 ### 1.2 Configure the Target Group
 #### Choose Target Type:
 #### Select Instances (for EC2-based apps) or IP addresses (for external apps).
