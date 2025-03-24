@@ -23,7 +23,6 @@
 #### Amazon S3 Storage Classes
 #### AWS offers multiple storage classes in S3 to optimize costs based on data access patterns:
 
-### Storage Class	Description & Use Case
 
 ## Amazon S3 Storage Classes
 
@@ -38,24 +37,26 @@
 | **S3 Glacier**                     | Archive storage for long-term data retention, retrieval in minutes to hours. |
 | **S3 Glacier Deep Archive**         | Lowest-cost storage option for data rarely accessed, retrieval takes up to 12+ hours. |
 
-Key Features of Amazon S3
-Scalability – No storage limits; S3 can scale automatically to meet demand.
 
-Durability & Availability – Provides 99.999999999% (11 nines) durability, ensuring data is highly reliable.
+### Key Features of Amazon S3
+#### Scalability – No storage limits; S3 can scale automatically to meet demand.
 
-Security & Access Control – Uses IAM roles, bucket policies, and encryption to protect data.
+#### Durability & Availability – Provides 99.999999999% (11 nines) durability, ensuring data is highly reliable.
 
-Versioning – Maintains multiple versions of an object to prevent accidental deletion.
+#### Security & Access Control – Uses IAM roles, bucket policies, and encryption to protect data.
 
-Lifecycle Management – Automates data transfer between storage classes to reduce costs.
+#### Versioning – Maintains multiple versions of an object to prevent accidental deletion.
 
-Data Encryption – Supports AES-256 and AWS KMS encryption for data security.
+#### Lifecycle Management – Automates data transfer between storage classes to reduce costs.
 
-Event Notifications – Triggers AWS Lambda functions or SNS topics when objects are modified.
+#### Data Encryption – Supports AES-256 and AWS KMS encryption for data security.
 
-Data Transfer Acceleration – Speeds up global data uploads using AWS Edge locations.
+#### Event Notifications – Triggers AWS Lambda functions or SNS topics when objects are modified.
 
-Conclusion
-Amazon S3 is a powerful and cost-effective storage solution for businesses and developers. Its flexibility, security, and reliability make it ideal for storing all types of data, from backups to big data analytics. By choosing the right storage class and security settings, you can optimize both performance and cost.
+#### Data Transfer Acceleration – Speeds up global data uploads using AWS Edge locations.
 
-Would you like additional details on S3 configurations or best practices?
+
+## Conclusion
+
+#### Amazon S3 is a powerful and cost-effective storage solution for businesses and developers. Its flexibility, security, and reliability make it ideal for storing all types of data, from backups to big data analytics. By choosing the right storage class and security settings, you can optimize both performance and cost.
+
