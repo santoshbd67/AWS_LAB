@@ -43,3 +43,25 @@
 #### Choose an IAM user with similar permissions.
 #### Click Next.
 
+33 Step 5: Review & Create User
+
+#### Review the user details, permissions, and access types.
+#### Click Create user.
+
+## Step 6: Download Credentials
+
+#### If programmatic access was enabled, download the Access Key ID and Secret Access Key by clicking "Download .csv".
+#### Save this file securely, as AWS will not show the secret key again.
+#### Click Close.
+
+## Step 8: Verify User Login (If Console Access was Enabled)
+
+#### Go to the IAM Dashboard → Users.
+#### Click on the new user.
+#### Under "Security credentials", copy the Sign-in URL (e.g., https://123456789012.signin.aws.amazon.com/console).
+#### Open the URL and log in with:
+#### Username: The IAM user name.
+#### Password: The one set during creation (or provided via email if "Auto-generate" was selected).
+
+### ✅ Your IAM user is now created successfully! 🎉
+
