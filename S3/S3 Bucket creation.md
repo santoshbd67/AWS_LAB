@@ -19,12 +19,13 @@
 #### Versioning (Optional: Enable if you want to keep versions of files).
 #### Server-side Encryption (Choose AES-256 for default encryption).
 #### Click Create bucket.
-
+<img width="938" alt="image" src="https://github.com/user-attachments/assets/864339de-600e-4c96-bb0c-ef8154b1bbf9" />
 
 ## Step 3: Upload a File to S3 Bucket
 #### Click on the newly created bucket (poc-s3-bucket).
 #### Click "Upload".
 #### Click "Add files" and select a file from your system.
+
 #### (Optional) Click "Add folder" if you want to upload an entire folder.
 #### Storage class: Keep the default (Standard) unless you need cost optimization.
 #### Click Upload.
