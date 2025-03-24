@@ -1,7 +1,8 @@
-Introduction to AWS Auto Scaling
-AWS Auto Scaling is a feature that automatically adjusts the number of EC2 instances in response to demand. It helps maintain application availability and optimize costs by scaling out (adding instances) during high traffic and scaling in (removing instances) when demand decreases.
+# Introduction to AWS Auto Scaling
+### AWS Auto Scaling is a feature that automatically adjusts the number of EC2 instances in response to demand. It helps maintain application availability and optimize costs by scaling out (adding instances) during high traffic and scaling in (removing instances) when demand decreases.
 
-Key Benefits of Auto Scaling
+### Key Benefits of Auto Scaling
+
 High Availability – Ensures applications run smoothly without downtime.
 
 Cost Optimization – Automatically removes unnecessary instances, reducing costs.
