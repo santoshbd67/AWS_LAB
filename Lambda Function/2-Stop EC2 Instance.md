@@ -70,6 +70,7 @@ def lambda_handler(event, context):
 
 ## Step 4: Test the Lambda Function
 #### Click Test → Create a new test event.
+<img width="931" alt="image" src="https://github.com/user-attachments/assets/cfa5414e-7a09-4663-90db-df061f5bdef6" />
 
 #### Event Name: StopEC2Test.
 
@@ -79,9 +80,12 @@ def lambda_handler(event, context):
 
 #### If successful, you will see:
 
+
 #### EC2 Instance i-xxxxxxxxxxxxxxxxx stopped successfully
 
 ### ✅ Verify in EC2 Dashboard that the instance is stopped.
+<img width="938" alt="image" src="https://github.com/user-attachments/assets/6a887e57-21f1-4a5e-9df0-57e335fa0c65" />
+
 
 ## Step 5 (Optional): Automate Using CloudWatch Event Rule
 #### To automate EC2 shutdown at a specific time:
