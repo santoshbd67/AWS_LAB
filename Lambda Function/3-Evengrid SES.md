@@ -123,7 +123,7 @@ Click **Deploy**.
 
 ---
 
-✅ Step 7: Test the Setup
+## ✅ Step 7: Test the Setup
 Send an Email
     .To: stop@yourdomain.com
 
