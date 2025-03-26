@@ -121,19 +121,5 @@ Click **Deploy**.
 
 ### ✅ Lambda now listens for SNS events and stops EC2 when an email is received.
 
----
-
-## ✅ Step 7: Test the Setup
-### Send an Email
-#### .To: stop@yourdomain.com
-  #### .Subject: "Stop the EC2 instance"
-
-Check the Process
-✅ Email → Saved to S3
-✅ S3 sends event → SNS
-✅ SNS triggers → Lambda
-✅ Lambda stops → EC2
-
-✅ Your EC2 instance will stop automatically! 🚀
 
 
