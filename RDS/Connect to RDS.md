@@ -61,6 +61,8 @@ ssh -i /path/to/your-key.pem ubuntu@your-ec2-public-ip
 sudo apt update
 sudo apt install mysql-client -y
 ```
+<img width="897" alt="image" src="https://github.com/user-attachments/assets/2f613db4-c11a-40da-91a0-bde09f6a92bf" />
+
 
 ## Step 5: Retrieve RDS Endpoint
 
@@ -70,10 +72,12 @@ sudo apt install mysql-client -y
 
 #### Copy the "Endpoint" under Connectivity & Security.
 
+
 #### Example endpoint:
 ```
 my-rds-instance.xxxxxx.us-east-1.rds.amazonaws.com
 ```
+<img width="932" alt="image" src="https://github.com/user-attachments/assets/71c366e0-d773-4833-b266-7085a4a4bc6f" />
 
 ## Step 6: Connect to MySQL RDS from EC2
 
@@ -92,6 +96,7 @@ mysql -h my-rds-instance.xxxxxx.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
 SHOW DATABASES;
 ```
 #### If successful, you should see a list of databases.
+<img width="664" alt="image" src="https://github.com/user-attachments/assets/8bdc72db-72ba-45db-80af-1c47aa14a1ad" />
 
 ## Step 8: Basic SQL Commands
 
@@ -120,6 +125,8 @@ INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');
 ```
 SELECT * FROM users;
 ```
+<img width="899" alt="image" src="https://github.com/user-attachments/assets/fce1207f-aa63-4358-ab3d-758aaf32af8b" />
+
 
 ## Step 9: Troubleshooting
 
