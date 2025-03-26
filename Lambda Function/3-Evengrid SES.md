@@ -124,10 +124,9 @@ Click **Deploy**.
 ---
 
 ## ✅ Step 7: Test the Setup
-Send an Email
-    .To: stop@yourdomain.com
-
-    .Subject: "Stop the EC2 instance"
+### Send an Email
+#### .To: stop@yourdomain.com
+  #### .Subject: "Stop the EC2 instance"
 
 Check the Process
 ✅ Email → Saved to S3
