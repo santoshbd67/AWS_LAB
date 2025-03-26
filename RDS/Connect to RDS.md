@@ -21,13 +21,16 @@
 
 #### Click Launch and wait for the instance to be running.
 
+
 ## Step 2: Configure RDS Security Group to Allow EC2 Access
 
 #### Go to AWS Console → EC2 → Security Groups.
 
 #### Select the Security Group attached to your RDS instance.
+<img width="922" alt="image" src="https://github.com/user-attachments/assets/0acbbc31-8a87-4330-8058-c5e4c9fa415c" />
 
 #### Click Inbound Rules → Edit Inbound Rules → Add Rule:
+<img width="946" alt="image" src="https://github.com/user-attachments/assets/2e2f1778-34d9-4c18-ac63-9be0f8e9a597" />
 
 #### Type: MySQL/Aurora.
 
@@ -38,6 +41,8 @@
 #### Source: Select EC2 Security Group (not "My IP").
 
 #### Save the changes.
+<img width="944" alt="image" src="https://github.com/user-attachments/assets/11c88894-186a-4905-bf55-8a66b83f15bd" />
+
 
 ## Step 3: Connect to EC2 via SSH
 
