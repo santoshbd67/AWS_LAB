@@ -7,12 +7,15 @@
 #### Click Launch Instance.
 
 #### Choose Ubuntu as the AMI.
+<img width="920" alt="image" src="https://github.com/user-attachments/assets/fc99fac7-60f4-4e96-98a7-a05722ed31d3" />
 
 #### Select Instance Type (e.g., t2.micro for Free Tier).
+<img width="760" alt="image" src="https://github.com/user-attachments/assets/e7d625eb-6cc3-4917-b3a5-c3016be97561" />
 
 #### In Network Settings:
 
 #### Ensure EC2 is in the same VPC as the RDS instance.
+<img width="599" alt="image" src="https://github.com/user-attachments/assets/a1101e6f-09b4-49df-9d1a-b8ad142a090e" />
 
 #### Choose or create a Security Group.
 
