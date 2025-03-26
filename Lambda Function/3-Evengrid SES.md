@@ -1,192 +1,116 @@
-# 🚀 Final Workflow
+# 🚀 Automatically Stop EC2 via Email Using S3 + SNS + Lambda  
 
-#### Amazon SES receives an email at ec2-stop@yourdomain.com.
+## 🔹 How It Works  
+1. **Gmail → AWS WorkMail**: Email is forwarded to AWS WorkMail.  
+2. **WorkMail → S3**: The email is stored as a file in an S3 bucket.  
+3. **S3 → SNS**: S3 triggers an SNS notification when a new file is uploaded.  
+4. **SNS → Lambda**: SNS invokes a Lambda function.  
+5. **Lambda → EC2**: Lambda reads the email, and if it contains `"Stop the EC2 instance"`, it stops the EC2 instance.  
 
-#### SES forwards the email to Amazon SNS.
+---
 
-#### SNS triggers a Lambda function (ProcessEmailSNS).
+## ✅ Step 1: Create an S3 Bucket to Store Emails  
+1. **Go to AWS Console** → Open **S3** → Click **Create Bucket**.  
+2. **Enter Bucket Name**: `email-storage-bucket`.  
+3. **Choose Region**: `us-east-1` (or your preferred region).  
+4. **Disable Block Public Access** (not needed for this use case).  
+5. Click **Create Bucket**.  
 
-#### Lambda (ProcessEmailSNS) extracts the subject from the email.
+✅ **S3 is now ready to store emails.**  
 
-#### If the subject contains "Stop the EC2 instance", it invokes your existing Lambda function (StopEC2Instance).
+---
 
-#### EC2 instance stops automatically. 🚀
+## ✅ Step 2: Set Up AWS WorkMail to Receive Emails  
+1. Go to **AWS WorkMail Console** → Click **Organizations**.  
+2. Click **Create Organization** → Select **WorkMail** → Click **Next**.  
+3. Choose your AWS **Region** and click **Next**.  
+4. Enter a name (e.g., `myemail-org`) and click **Create Organization**.  
+5. **Wait for WorkMail to be ready** (this may take a few minutes).  
 
-## ✅ Step 1: Verify a Domain in Amazon SES
-### Why?
-#### SES needs a verified domain to receive emails.
+### **Create a WorkMail Email Address**  
+1. **Go to AWS WorkMail Console** → Click **Users**.  
+2. Click **"Create User"**.  
+3. **Username**: `stop` (This creates `stop@yourdomain.com`).  
+4. **Set Password** and **Create User**.  
 
-### Steps to Verify a Domain
-#### Go to AWS SES Console → Click Verified Identities.
+✅ **Your email address (`stop@yourdomain.com`) is ready.**  
 
-#### Click Create Identity → Select Domain.
+---
 
-#### Enter your domain name (e.g., yourdomain.com).
+## ✅ Step 3: Configure Email Forwarding to S3  
+1. **Go to WorkMail Console** → Click **Email Flow** → Click **Rules**.  
+2. Click **Create Rule**.  
+3. **Rule Name**: `ForwardToS3`.  
+4. **Condition**: If recipient is **stop@yourdomain.com**.  
+5. **Action**: `Deliver to Amazon S3`.  
+6. **S3 Bucket**: Choose `email-storage-bucket`.  
+7. Click **Save Rule**.  
 
-#### AWS will provide TXT, MX, and CNAME records.
+✅ **Now, any email sent to `stop@yourdomain.com` is saved in S3.**  
 
-#### Add these records to your domain provider (GoDaddy, Route 53, etc.).
+---
 
-#### Wait for verification completion (~10-30 minutes).
+## ✅ Step 4: Create an SNS Topic  
+1. Go to **AWS SNS Console** → Click **"Create Topic"**.  
+2. **Topic Name**: `s3-email-events`.  
+3. **Type**: **Standard**.  
+4. Click **Create Topic**.  
 
-#### Enable Email Receiving.
+### **Subscribe Lambda to SNS**  
+1. Go to **AWS SNS Console** → Click **`s3-email-events`** topic.  
+2. Click **"Create Subscription"**.  
+3. **Protocol**: Choose **AWS Lambda**.  
+4. **Endpoint**: Select **`StopEC2Instance`** Lambda function.  
+5. Click **Create Subscription**.  
 
-### ✅ Now SES can receive emails for this domain.
+✅ **SNS will now notify Lambda when it receives a message.**  
 
-## ✅ Step 2: Create an SNS Topic
+---
 
-### Why?
-#### SNS allows SES to forward emails and trigger Lambda.
+## ✅ Step 5: Configure S3 to Send Notifications to SNS  
+1. Go to **AWS S3 Console** → Click **`email-storage-bucket`**.  
+2. Click **Properties** → Scroll to **Event Notifications**.  
+3. Click **"Create Event Notification"**.  
+4. **Event Name**: `EmailUploadTrigger`.  
+5. **Event Type**: **Put (Object Created)**.  
+6. **Destination**: Choose **SNS Topic**.  
+7. Select **`s3-email-events`**.  
+8. Click **Save Changes**.  
 
-#### Steps to Create SNS Topic
-#### Go to AWS SNS Console → Click Topics.
+✅ **Now, S3 will notify SNS when a new email file is uploaded.**  
 
-#### Click Create Topic.
+---
 
-Choose Standard Topic.
+## ✅ Step 6: Modify Lambda to Process SNS Messages  
+1. Go to **AWS Lambda Console** → Click `StopEC2Instance`.  
+2. Click **Edit Code** and replace the existing code with:
 
-#### Topic Name: EC2StopEmailTrigger
-
-#### Click Create Topic.
-
-#### ✅ SNS topic is ready.
-
-## ✅ Step 3: Subscribe Lambda to the SNS Topic
-### Why?
-#### SNS needs to trigger a Lambda function when an email arrives.
-
-### Steps to Subscribe a Lambda Function
-#### Open Amazon SNS.
-
-#### Click on EC2StopEmailTrigger topic.
-
-#### Click Create Subscription.
-
-#### Protocol: Choose AWS Lambda.
-
-#### Endpoint: Select your Lambda function (ProcessEmailSNS).
-
-#### Click Create Subscription.
-
-#### ✅ SNS can now trigger Lambda.
-
-## ✅ Step 4: Configure SES to Forward Emails to SNS
-### Why?
-#### SES needs to forward incoming emails to SNS.
-
-#### Steps to Create an SES Rule
-#### Go to AWS SES → Click Rule Sets.
-
-#### Click Create Rule Set.
-
-#### Click Create Rule.
-
-#### Set Recipient Condition
-
-#### Enter "ec2-stop@yourdomain.com".
-
-#### Add an Action
-
-#### Click Add Action → Choose Amazon SNS.
-
-#### Select the SNS Topic: EC2StopEmailTrigger.
-
-#### Click Create Rule.
-
-#### Enable the Rule Set.
-
-### ✅ Now, SES forwards emails to SNS.
-
-## ✅ Step 5: Create the Lambda Function to Process Email
-### Why?
-#### This Lambda function will parse the email subject and invoke your existing StopEC2Instance Lambda.
-
-#### Steps to Create Lambda
-#### Go to AWS Lambda Console → Click Create Function.
-
-#### Choose "Author from scratch".
-
-#### Function Name: ProcessEmailSNS
-
-#### Runtime: Choose Python 3.9.
-
-#### Permissions:
-
-#### Click Change default execution role → Create a new role.
-
-#### Attach AmazonSNSFullAccess and AWSLambdaBasicExecutionRole.
-
-#### Click Create Function.
-
-### ✅ Lambda function created.
-
-## ✅ Step 6: Add Lambda Function Code
-### Why?
-#### This code reads the email subject and invokes your existing EC2 Stop Lambda function.
-
-#### Steps to Add Code
-#### Open AWS Lambda → ProcessEmailSNS function.
-
-#### Go to the Code tab.
-
-#### Replace the default code with:
-```
-import json
+```python
 import boto3
+import json
 
-lambda_client = boto3.client('lambda')
+# Initialize AWS Clients
+s3 = boto3.client('s3')
+ec2 = boto3.client('ec2', region_name='us-east-1')  # Change region if needed
 
-EC2_STOP_LAMBDA = "StopEC2Instance"  # Replace with your existing Lambda function name
+# Your EC2 Instance ID
+INSTANCE_ID = "i-xxxxxxxxxxxxxxxxx"  # Replace with your EC2 Instance ID
 
 def lambda_handler(event, context):
-    print("Received event: " + json.dumps(event, indent=2))
-
-    # Extract email message from SNS
     for record in event['Records']:
-        message = json.loads(record["Sns"]["Message"])
-        subject = message.get("mail", {}).get("commonHeaders", {}).get("subject", "")
+        # SNS message contains S3 event details
+        sns_message = json.loads(record['Sns']['Message'])
+        bucket_name = sns_message['Records'][0]['s3']['bucket']['name']
+        object_key = sns_message['Records'][0]['s3']['object']['key']
 
-        if "Stop the EC2 instance" in subject:
-            # Invoke the existing EC2 stop Lambda function
-            response = lambda_client.invoke(
-                FunctionName=EC2_STOP_LAMBDA,
-                InvocationType='Event'  # Async invocation
-            )
-            return {
-                'statusCode': 200,
-                'body': 'Triggered EC2 Stop Lambda'
-            }
+        # Read email content from S3
+        email_obj = s3.get_object(Bucket=bucket_name, Key=object_key)
+        email_content = email_obj['Body'].read().decode('utf-8')
 
-    return {
-        'statusCode': 400,
-        'body': 'No action taken'
-    }
-```
-#### Click Deploy.
-
-### ✅ Lambda function is ready.
-
-## ✅ Step 7: Test the Setup
-### How to Test?
-#### Send an email to "ec2-stop@yourdomain.com".
-
-#### Subject: "Stop the EC2 instance".
-
-#### Check AWS Lambda logs:
-
-#### Open AWS Lambda → ProcessEmailSNS → Monitor → Logs.
-
-#### If the subject is correct, EC2 instance should stop.
-
-### ✅ EC2 instance stops successfully! 🚀
-
-#### 🎯 Summary
-#### ✅ Amazon SES receives an email.
-#### ✅ SES forwards email to SNS.
-#### ✅ SNS triggers Lambda (ProcessEmailSNS).
-#### ✅ Lambda reads the email subject.
-#### ✅ If the subject matches, it triggers your existing Lambda function (StopEC2Instance).
-#### ✅ EC2 instance stops automatically! 🚀
-
-#### This fully automated event-driven system requires no S3 storage and is instantaneous. 🎉
-
+        # Check if email subject contains "Stop the EC2 instance"
+        if "Stop the EC2 instance" in email_content:
+            print(f"Stopping EC2 Instance: {INSTANCE_ID}")
+            ec2.stop_instances(InstanceIds=[INSTANCE_ID])
+            return {"statusCode": 200, "body": f"EC2 {INSTANCE_ID} stopped"}
+    
+    return {"statusCode": 400, "body": "No action taken"}
