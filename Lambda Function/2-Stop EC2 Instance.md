@@ -6,16 +6,19 @@
 #### Login to AWS Console → Navigate to IAM.
 
 #### Click Roles → Create Role.
+<img width="934" alt="image" src="https://github.com/user-attachments/assets/87f7775d-f2e9-4b43-895b-c471df4fff14" />
 
 #### Select Use Case → Choose AWS Service → Select Lambda.
 
 #### Click Next: Permissions.
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/bfdc7c3e-0e30-4028-9654-81c02d87a7ca" />
 
 #### Attach the following policy:
 
 #### AmazonEC2FullAccess (or create a custom policy with least privileges).
 
 #### Click Next → Name the Role (e.g., Lambda_EC2_Stop_Role).
+<img width="951" alt="image" src="https://github.com/user-attachments/assets/d627bdd2-957a-488f-a9e7-a0dbc117b43b" />
 
 #### Click Create Role.
 
@@ -23,16 +26,19 @@
 #### Go to AWS Console → Navigate to Lambda.
 
 #### Click Create Function.
+<img width="950" alt="image" src="https://github.com/user-attachments/assets/a9e44add-d641-40d5-a459-3201a11b1b14" />
 
 #### Choose Author from scratch.
 
 #### Function Name: StopEC2Instance.
 
 #### Runtime: Select Python 3.9 (or latest).
+<img width="933" alt="image" src="https://github.com/user-attachments/assets/0fe7f73f-425c-4689-a181-78245b2dd7d0" />
 
 #### Permissions: Choose Use an existing role → Select Lambda_EC2_Stop_Role.
 
 #### Click Create Function.
+<img width="929" alt="image" src="https://github.com/user-attachments/assets/c4e1aea1-8274-496a-a1ec-cc8f0a1b2602" />
 
 ## Step 3: Add the Python Code to Stop EC2 Instance
 #### Scroll down to the Code Source section.
@@ -59,7 +65,7 @@ def lambda_handler(event, context):
         }
 ```
 #### Modify the instance_id with your actual EC2 instance ID.
-
+<img width="936" alt="image" src="https://github.com/user-attachments/assets/0d9fcfef-b86d-4318-abc2-63bf1a665c6a" />
 #### Click Deploy.
 
 ## Step 4: Test the Lambda Function
