@@ -87,27 +87,6 @@ def lambda_handler(event, context):
 <img width="938" alt="image" src="https://github.com/user-attachments/assets/6a887e57-21f1-4a5e-9df0-57e335fa0c65" />
 
 
-## Step 5 (Optional): Automate Using CloudWatch Event Rule
-#### To automate EC2 shutdown at a specific time:
-
-#### Go to AWS Console → Navigate to Amazon EventBridge (formerly CloudWatch Events).
-
-#### Click Rules → Create Rule.
-
-#### Name: StopEC2Schedule.
-
-#### Event Source: Select Schedule.
-
-#### Fixed Rate or Cron Expression:
-
-#### Example cron for stopping EC2 every night at 10 PM UTC:
-```
-0 22 * * ? *
-```
-#### Target: Choose AWS Lambda function → Select StopEC2Instance.
-
-#### Click Create Rule.
-
 ## Step 6: Verify the Automation
 #### Wait for the scheduled time or trigger manually via Test.
 
