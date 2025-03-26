@@ -114,3 +114,27 @@ def lambda_handler(event, context):
             return {"statusCode": 200, "body": f"EC2 {INSTANCE_ID} stopped"}
     
     return {"statusCode": 400, "body": "No action taken"}
+```
+---
+
+Click **Deploy**.
+
+### ✅ Lambda now listens for SNS events and stops EC2 when an email is received.
+
+---
+
+✅ Step 7: Test the Setup
+Send an Email
+    .To: stop@yourdomain.com
+
+    .Subject: "Stop the EC2 instance"
+
+Check the Process
+✅ Email → Saved to S3
+✅ S3 sends event → SNS
+✅ SNS triggers → Lambda
+✅ Lambda stops → EC2
+
+✅ Your EC2 instance will stop automatically! 🚀
+
+
