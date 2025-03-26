@@ -36,6 +36,7 @@
 ```
 index.html
 ```
+<img width="809" alt="image" src="https://github.com/user-attachments/assets/8ec41b34-b509-4259-833c-e4311cb0fb94" />
 
 #### Click Save changes.
 
@@ -72,7 +73,11 @@ index.html
 ```
 http://devops-training-site.s3-website-us-east-1.amazonaws.com
 ```
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/6aa58a1e-2ce8-4d8a-b86c-aa67f4f8b46b" />
+
 #### Open the URL in a browser.
 
 ### ✅ Your website should now display:
 ### "Welcome to the DevOps Training" with a background image.
+<img width="940" alt="image" src="https://github.com/user-attachments/assets/69827a3b-6526-419a-9cb2-cdf6bcf6abf1" />
+
